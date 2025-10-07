@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjwn64c6ghf2p"]
+
+[ext_resource type="Script" uid="uid://d13a0hxd7ek0x" path="res://objects/player.gd" id="1_eqqp1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bxedw"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_eqqp1")
+topSpeed = 10.0
+camSensitivity = 0.008
+camLimitLower = -1.5
+camLimitUpper = 0.2
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_bxedw")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9335804, 0.35836795, 0, -0.35836795, 0.9335804, 0, 0, 0)
+spring_length = 8.0
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
+current = true
