@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bn17niqneua1c"]
+
+[ext_resource type="Texture2D" uid="uid://0vpctsf35yi4" path="res://textures/SpellPointOff.png" id="1_y43y6"]
+
+[resource]
+transparency = 1
+blend_mode = 1
+no_depth_test = true
+shading_mode = 0
+albedo_texture = ExtResource("1_y43y6")

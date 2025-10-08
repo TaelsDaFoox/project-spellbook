@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3y8tmg2hh2q4"]
+
+[ext_resource type="Material" uid="uid://e58p41k5w68u" path="res://materials/SpellLine.tres" id="1_3wxkv"]
+[ext_resource type="Script" uid="uid://dgjcjtsq4tcx3" path="res://spell_line.gd" id="2_e2y0u"]
+
+[node name="SpellLine" type="CSGBox3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.029999971, 0)
+size = Vector3(3.5, 0.001, 0.3)
+material = ExtResource("1_3wxkv")
+script = ExtResource("2_e2y0u")
+lineNum = 1
+lerpSpeed = 10.0

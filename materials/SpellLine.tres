@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://e58p41k5w68u"]
+
+[ext_resource type="Texture2D" uid="uid://dps7o15ax1xhw" path="res://textures/spellLine.png" id="1_ex664"]
+
+[resource]
+transparency = 1
+blend_mode = 1
+no_depth_test = true
+shading_mode = 0
+albedo_texture = ExtResource("1_ex664")
