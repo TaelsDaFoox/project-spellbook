@@ -9,16 +9,31 @@ ambient_light_color = Color(0.4578938, 0.35333064, 0.71444374, 1)
 
 [node name="Main" type="Node3D"]
 
+[node name="Player" parent="." instance=ExtResource("1_ig7tw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44504, 1.5, 0.5418005)
+
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3395996, 0, 0.57077026)
-size = Vector3(20.24414, 1, 24.645203)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18054199, 0, 0.57077026)
+size = Vector3(38.388428, 1, 24.645203)
 material = ExtResource("1_0xm2m")
 
-[node name="Player" parent="CSGCombiner3D" instance=ExtResource("1_ig7tw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44504, 1.5, 0.5418005)
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11315918, 1.2640076, -22.936245)
+size = Vector3(39.701904, 3.5280151, 23.584576)
+material = ExtResource("1_0xm2m")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.428528, 2.683403, -27.776937)
+size = Vector3(17.071167, 6.366806, 13.770714)
+material = ExtResource("1_0xm2m")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.081970215, 4.052086, -43.64776)
+size = Vector3(39.639526, 9.104172, 22.638088)
+material = ExtResource("1_0xm2m")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ig7tw")

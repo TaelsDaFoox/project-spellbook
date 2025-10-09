@@ -13,7 +13,7 @@ func _physics_process(delta: float) -> void:
 			position.z=size.x/-2*sin(rotation.y)
 			position.x=size.x/2*cos(rotation.y)
 		else:
-			#visible = true
+			visible = true
 			if (PlayerGlobalManager.spellDirs[lineNum]-PlayerGlobalManager.spellDirs[lineNum-1])%2==0:
 				#straight connectors
 				rotation.y=(PlayerGlobalManager.spellDirs[lineNum]+2)*(PI/-2)

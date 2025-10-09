@@ -1,23 +1,23 @@
-[gd_scene load_steps=7 format=3 uid="uid://bjwn64c6ghf2p"]
+[gd_scene load_steps=8 format=3 uid="uid://bjwn64c6ghf2p"]
 
 [ext_resource type="Script" uid="uid://d13a0hxd7ek0x" path="res://objects/player.gd" id="1_eqqp1"]
 [ext_resource type="Material" uid="uid://mx5xsoqq455f" path="res://materials/SpellCircleBase.tres" id="2_ykyjo"]
 [ext_resource type="Material" uid="uid://bn17niqneua1c" path="res://materials/SpellNodeOff.tres" id="3_uxov2"]
 [ext_resource type="PackedScene" uid="uid://b3y8tmg2hh2q4" path="res://objects/spell_line.tscn" id="5_3rerk"]
 [ext_resource type="Material" uid="uid://bniaqr2rjnxu4" path="res://materials/SpellStar.tres" id="5_f46kd"]
+[ext_resource type="PackedScene" uid="uid://bt6sg6r0sb7pd" path="res://player_model.tscn" id="6_3rerk"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bxedw"]
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_eqqp1")
-topSpeed = 10.0
+topSpeed = 8.0
+runSpeedMult = 2.0
 camSensitivity = 0.008
 camLimitLower = -1.5
 camLimitUpper = 0.2
 jumpStrength = 15.0
-gravityForce = 35.0
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+gravityForce = 40.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_bxedw")
@@ -72,3 +72,9 @@ lineNum = 2
 [node name="SpellLine4" parent="SpellEffectBase" instance=ExtResource("5_3rerk")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.033, 0)
 lineNum = 3
+
+[node name="PlayerSFX" type="AudioStreamPlayer" parent="."]
+max_polyphony = 4
+
+[node name="PlayerModel" parent="." instance=ExtResource("6_3rerk")]
+transform = Transform3D(0.625, 0, 0, 0, 0.625, 0, 0, 0, 0.625, 0, -0.9971772, 0)
