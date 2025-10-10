@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://vdpym4v5tgil"]
+
+[ext_resource type="Texture2D" uid="uid://dbgyelfy81eqq" path="res://textures/DungeonBrick.png" id="1_h13ns"]
+
+[resource]
+albedo_texture = ExtResource("1_h13ns")
+metallic_specular = 0.0
+uv1_scale = Vector3(0.3, 0.3, 0.3)
+uv1_triplanar = true
+uv1_world_triplanar = true

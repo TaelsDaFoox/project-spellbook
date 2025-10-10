@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dmdpvs1alkhhe"]
+
+[ext_resource type="Texture2D" uid="uid://l82aljx86kkt" path="res://textures/magicDirt.png" id="1_5hcu8"]
+
+[resource]
+albedo_texture = ExtResource("1_5hcu8")
+metallic_specular = 0.0
+uv1_scale = Vector3(0.25, 0.25, 0.25)
+uv1_triplanar = true
+uv1_world_triplanar = true

@@ -52,3 +52,6 @@ visible = false
 
 [node name="Shades" parent="Armature/Skeleton3D" index="3"]
 visible = false
+
+[node name="Witchhat" parent="Armature/Skeleton3D" index="6"]
+visible = false

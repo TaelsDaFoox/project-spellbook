@@ -36,7 +36,7 @@ var material:StandardMaterial3D = null
 var mouseLocked := false
 
 var spellNames := ["Flare","Chill","Shock","Restore","Energize","Chronos","???"]
-var spellCombos := [3421,1342,1423,2413,3124,2134]
+var spellCombos := [3421,1342,1423,3412,3124,2134]
 var spellColors :=[Vector3(255,0,90),Vector3(128,140,255),Vector3(255,216,0),Vector3(0,240,160),Vector3(0,255,255),Vector3(237,109,54),Vector3.ZERO]
 
 func _ready() -> void:
