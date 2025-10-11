@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4t7dwdcqumdt"]
+
+[ext_resource type="Material" uid="uid://c2l41f85ps7kb" path="res://materials/ice.tres" id="1_itbu3"]
+
+[node name="IceBlock" type="CSGBox3D"]
+use_collision = true
+collision_layer = 9
+collision_mask = 0
+material = ExtResource("1_itbu3")

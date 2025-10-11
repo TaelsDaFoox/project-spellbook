@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://hn7y0ya8y7k6"]
+[gd_scene load_steps=8 format=3 uid="uid://hn7y0ya8y7k6"]
 
 [ext_resource type="Material" uid="uid://big3dkjtr8aem" path="res://materials/grass.tres" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bjwn64c6ghf2p" path="res://objects/player.tscn" id="1_ig7tw"]
 [ext_resource type="Material" uid="uid://dmdpvs1alkhhe" path="res://materials/dirt.tres" id="2_h2yge"]
 [ext_resource type="Material" uid="uid://vdpym4v5tgil" path="res://materials/bricks.tres" id="3_h2yge"]
-[ext_resource type="PackedScene" uid="uid://c0cf0fsbpxels" path="res://objects/ice_block.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://c4t7dwdcqumdt" path="res://objects/iceblock.tscn" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://1ckhq0hftyle" path="res://spellbook_ui.tscn" id="6_272bh"]
 
 [sub_resource type="Environment" id="Environment_ig7tw"]
 ambient_light_source = 2
@@ -98,9 +99,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4831867, 4.345685, -116.578
 size = Vector3(111.92879, 8.661867, 47.574524)
 material = ExtResource("3_h2yge")
 
-[node name="IceBlock" parent="CSGCombiner3D" instance=ExtResource("5_lquwl")]
-transform = Transform3D(11.029694, 0, 0, 0, 10.7228365, 0, 0, 0, 2.6480753, 0.38659668, 14.072214, -95.516914)
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ig7tw")
 
@@ -108,4 +106,11 @@ environment = SubResource("Environment_ig7tw")
 transform = Transform3D(0.99836797, -0.0034877555, -0.057002105, 0.057107817, 0.06655587, 0.996147, 0.0003195079, -0.9977765, 0.06664646, 0, 0, 0)
 light_color = Color(0.95686275, 1, 0.9411765, 1)
 light_energy = 0.2
+light_cull_mask = 4294966783
 shadow_enabled = true
+
+[node name="IceBlock" parent="." instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30402708, 14.256012, -94.77886)
+size = Vector3(11.385132, 11.27002, 2.727539)
+
+[node name="SpellbookUI" parent="." instance=ExtResource("6_272bh")]

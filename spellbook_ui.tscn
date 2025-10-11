@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://1ckhq0hftyle"]
+
+[ext_resource type="Script" uid="uid://bw17rfx5lsx1s" path="res://spellbook_ui.gd" id="1_e8j6n"]
+[ext_resource type="PackedScene" uid="uid://bm145skpw73i" path="res://spellbookmodel.tscn" id="1_wnjqb"]
+
+[sub_resource type="Environment" id="Environment_e8j6n"]
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_wnjqb"]
+viewport_path = NodePath("SubViewport")
+
+[node name="SpellbookUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_e8j6n")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(192, 150)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewport"]
+environment = SubResource("Environment_e8j6n")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewport/WorldEnvironment"]
+transform = Transform3D(0.94456565, -0.19417734, -0.264747, 0.32832265, 0.5586371, 0.7616619, 0, -0.80636203, 0.5914222, 0, 0, 0)
+layers = 512
+light_energy = 0.5
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.86400515, 0, 5.528722)
+cull_mask = 1048064
+fov = 30.0
+
+[node name="spellbook" parent="SubViewport" instance=ExtResource("1_wnjqb")]
+
+[node name="SpellbookRender" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -189.0
+offset_top = -134.0
+offset_right = 3.0
+offset_bottom = 16.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = SubResource("ViewportTexture_wnjqb")
+
+[node name="SubViewport2" type="SubViewport" parent="."]
+size = Vector2i(128, 192)
+
+[node name="Camera2D" type="Camera2D" parent="SubViewport2"]
+position = Vector2(36, 14)
+
+[node name="Label" type="Label" parent="SubViewport2"]
+offset_right = 74.0
+offset_bottom = 23.0
+text = "awesome"

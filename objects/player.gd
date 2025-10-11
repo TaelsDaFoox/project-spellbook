@@ -34,6 +34,8 @@ extends CharacterBody3D
 @onready var animator = $PlayerModel/AnimationPlayer
 var material:StandardMaterial3D = null
 var mouseLocked := false
+var fireball = load("res://objects/fireball.tscn")
+var chargedSpell := ""
 
 var spellNames := ["Flare","Chill","Shock","Restore","Energize","Chronos","???"]
 var spellCombos := [3421,1342,1423,3412,3124,2134]
@@ -107,6 +109,13 @@ func _physics_process(delta: float) -> void:
 		addSpellDirections()
 		input_dir = Vector2.ZERO
 	else:
+		if PlayerGlobalManager.casting:
+			if chargedSpell=="Flare":
+				var fireballSpawned = fireball.instantiate()
+				get_parent().add_child(fireballSpawned)
+				fireballSpawned.move_dir = Vector3(sin(playerModel.rotation.y+PI),0,cos(playerModel.rotation.y+PI))
+				fireballSpawned.position = position
+		chargedSpell= ""
 		if input_dir:
 			playerModel.rotation.y=lerp_angle(playerModel.rotation.y,-input_dir.rotated(-camPivot.rotation.y).angle()-PI/2,delta*10)
 		PlayerGlobalManager.casting=false
@@ -178,6 +187,7 @@ func spellFinish():
 	var spellSequence = PlayerGlobalManager.spellDirs[3]+PlayerGlobalManager.spellDirs[2]*10+PlayerGlobalManager.spellDirs[1]*100+PlayerGlobalManager.spellDirs[0]*1000
 	print(spellSequence)
 	print(spellNames[spellCombos.find(spellSequence)])
+	chargedSpell= spellNames[spellCombos.find(spellSequence)]
 	if spellCombos.has(spellSequence):
 		if PlayerGlobalManager.spellDirs[3]==1:
 			playerSFX.stream=sfxSpellUF
