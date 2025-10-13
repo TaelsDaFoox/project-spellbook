@@ -1,25 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://qpqrqnhvb81d"]
+[gd_scene load_steps=4 format=3 uid="uid://w30ksg5ky1hm"]
 
-[ext_resource type="Script" uid="uid://bw2fqnv31ett3" path="res://objects/fireball.gd" id="1_ltln1"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ltln1"]
-albedo_color = Color(1, 0, 0, 1)
-emission_enabled = true
-emission = Color(0.9192808, 4.47616e-06, 1.1551381e-06, 1)
+[ext_resource type="Script" uid="uid://bp23opwwhrpaw" path="res://objects/iceball.gd" id="1_pwhj2"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_xomky"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ltln1"]
 radius = 0.3892887
 
-[node name="Fireball" type="StaticBody3D"]
+[node name="IceBall" type="StaticBody3D"]
 collision_layer = 4
 collision_mask = 0
-script = ExtResource("1_ltln1")
-move_speed = 25.0
+script = ExtResource("1_pwhj2")
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="."]
-material = SubResource("StandardMaterial3D_ltln1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_xomky")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://1ckhq0hftyle"]
+[gd_scene load_steps=7 format=3 uid="uid://1ckhq0hftyle"]
 
 [ext_resource type="Script" uid="uid://bw17rfx5lsx1s" path="res://spellbook_ui.gd" id="1_e8j6n"]
 [ext_resource type="PackedScene" uid="uid://bm145skpw73i" path="res://spellbookmodel.tscn" id="1_wnjqb"]
@@ -6,6 +6,15 @@
 [sub_resource type="Environment" id="Environment_e8j6n"]
 ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_e8j6n"]
+viewport_path = NodePath("SubViewport2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p0mlo"]
+resource_local_to_scene = true
+transparency = 1
+albedo_texture = SubResource("ViewportTexture_e8j6n")
+uv1_scale = Vector3(-1, 1, 1)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_wnjqb"]
 viewport_path = NodePath("SubViewport")
@@ -38,6 +47,13 @@ cull_mask = 1048064
 fov = 30.0
 
 [node name="spellbook" parent="SubViewport" instance=ExtResource("1_wnjqb")]
+transform = Transform3D(0.9999996, -4.0133895e-07, 0, 4.0133895e-07, 0.9999996, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="SubViewport/spellbook"]
+transform = Transform3D(0.9999999, 5.684342e-14, 0, -5.684342e-14, 0.9999999, 0, 0, 0, 1, 0, 0, 0)
+layers = 512
+size = Vector3(1.5284424, 1.9516602, 0.001)
+material = SubResource("StandardMaterial3D_p0mlo")
 
 [node name="SpellbookRender" type="TextureRect" parent="."]
 layout_mode = 1
@@ -55,12 +71,21 @@ grow_vertical = 0
 texture = SubResource("ViewportTexture_wnjqb")
 
 [node name="SubViewport2" type="SubViewport" parent="."]
+transparent_bg = true
 size = Vector2i(128, 192)
+
+[node name="Label" type="Label" parent="SubViewport2"]
+offset_left = -24.0
+offset_top = -68.0
+offset_right = 567.0
+offset_bottom = 85.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "I didn't have
+time to finish
+this... read the
+description to
+see what you
+can do"
 
 [node name="Camera2D" type="Camera2D" parent="SubViewport2"]
 position = Vector2(36, 14)
-
-[node name="Label" type="Label" parent="SubViewport2"]
-offset_right = 74.0
-offset_bottom = 23.0
-text = "awesome"

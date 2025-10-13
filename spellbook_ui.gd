@@ -1,6 +1,7 @@
 extends Control
 @onready var spellbook = $SubViewport/spellbook
 @onready var spellbookleftpage = $SubViewport/spellbook/Armature/Skeleton3D/FrontPagesRender
+@onready var bookanimator = $SubViewport/spellbook/Armature/AnimationPlayer
 var spellbookTimer := 0.0
 func _physics_process(delta: float) -> void:
 	spellbook.rotation.y=sin(spellbookTimer)/12

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://hn7y0ya8y7k6"]
+[gd_scene load_steps=10 format=3 uid="uid://hn7y0ya8y7k6"]
 
 [ext_resource type="Material" uid="uid://big3dkjtr8aem" path="res://materials/grass.tres" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bjwn64c6ghf2p" path="res://objects/player.tscn" id="1_ig7tw"]
@@ -7,7 +7,19 @@
 [ext_resource type="PackedScene" uid="uid://c4t7dwdcqumdt" path="res://objects/iceblock.tscn" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://1ckhq0hftyle" path="res://spellbook_ui.tscn" id="6_272bh"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7mycd"]
+sky_top_color = Color(0.43494004, 0.32587522, 1, 1)
+sky_horizon_color = Color(0.5058824, 0.5921569, 1, 1)
+ground_bottom_color = Color(0.14182097, 0.2823646, 0.35275903, 1)
+ground_horizon_color = Color(0.44003004, 0.6052035, 0.60808325, 1)
+
+[sub_resource type="Sky" id="Sky_272bh"]
+sky_material = SubResource("ProceduralSkyMaterial_7mycd")
+
 [sub_resource type="Environment" id="Environment_ig7tw"]
+background_mode = 2
+background_color = Color(1, 1, 1, 1)
+sky = SubResource("Sky_272bh")
 ambient_light_source = 2
 ambient_light_color = Color(0.723036, 0.6516912, 1, 1)
 
