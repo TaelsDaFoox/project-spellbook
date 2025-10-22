@@ -15,4 +15,10 @@ SAWD - Heal
 SWDA - Restore Mana
 DWSA - Chronos
 
+PROGRAMS USED: (thank you to the reviewer who reminded me to add this)
+Engine - Godot
+Modelling & Animation - Blender
+Textures - Paint.net
+Sounds - lmms (using iteachvader's soundfonts)
+
 DEMO VIDEO: https://www.youtube.com/watch?v=7RtMeJf-5T8
